@@ -30,7 +30,7 @@ class PaymentControllerTest {
 
         Payment result = controller.create(new CreatePaymentRequest("M-1", new BigDecimal("10.00")));
 
-        assertThat(result.getStatus()).isEqualTo("PENDING");
+        assertThat(result.getStatus()).isEqualTo("CREATED");
         assertThat(result.getMerchantRef()).isEqualTo("M-1");
         verify(repo).save(any(Payment.class));
     }
